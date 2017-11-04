@@ -52,8 +52,8 @@ func httpPOST(url: String, handler: Handlers, parameters: [String: Any]) {
             default:
                 print("Invalid handler")
             }
-        case .failure(let error):
-            print(error)
+        case .failure(let value):
+            print(JSON(value)[0])
         }
     }
 }

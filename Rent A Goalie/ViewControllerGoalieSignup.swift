@@ -92,15 +92,13 @@ class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPi
         let first_name = firstName.text
         let last_name = lastName.text
         let skill_level = getSegment()
-        var cities: [String] = []
-        cities.append("http://127.0.0.1:8000/goalies/location/4/")
         let url = "http://127.0.0.1:8000/goalies/goalie/"
         let parameters: [String: Any] = [
             "firstName": first_name!,
             "lastName": last_name!,
             "skillLevel": skill_level,
             "cities": [
-                "http://127.0.0.1:8000/goalies/location/" + String(describing: (self.selectedValue + 1)) + "/"
+                "http://127.0.0.1:8000/goalies/location/" + String(describing: (self.selectedValue + 7)) + "/"
             ]
         ]
         httpPOST(url:url, handler: Handlers.none, parameters:parameters)
