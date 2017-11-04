@@ -15,6 +15,9 @@
 		46061D001FADC65D00ED512A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46061CFE1FADC65D00ED512A /* LaunchScreen.storyboard */; };
 		46061D0B1FADC65D00ED512A /* Rent_A_GoalieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D0A1FADC65D00ED512A /* Rent_A_GoalieTests.swift */; };
 		46061D161FADC65D00ED512A /* Rent_A_GoalieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */; };
+		A68CAD3195E22EBE5CC50628 /* Pods_Rent_A_Goalie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8860324E70C99CAF45EE697D /* Pods_Rent_A_Goalie.framework */; };
+		AE0F968976AE14539839B622 /* Pods_Rent_A_GoalieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC51D8DD69377AF7B4A4DC9 /* Pods_Rent_A_GoalieTests.framework */; };
+		B472C0248A802458A136AD64 /* Pods_Rent_A_GoalieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F8C92348FCEB97822556B6 /* Pods_Rent_A_GoalieUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22F8C92348FCEB97822556B6 /* Pods_Rent_A_GoalieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rent_A_GoalieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B8791BDE05FF7EF60CD5C6E /* Pods-Rent A Goalie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A Goalie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A Goalie/Pods-Rent A Goalie.debug.xcconfig"; sourceTree = "<group>"; };
+		3EC51D8DD69377AF7B4A4DC9 /* Pods_Rent_A_GoalieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rent_A_GoalieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46061CEF1FADC65C00ED512A /* Rent A Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rent A Goalie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46061CF21FADC65D00ED512A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46061CF41FADC65D00ED512A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		46061D111FADC65D00ED512A /* Rent A GoalieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rent A GoalieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rent_A_GoalieUITests.swift; sourceTree = "<group>"; };
 		46061D171FADC65D00ED512A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62EB7B54DB796D30311D7DAC /* Pods-Rent A GoalieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A GoalieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A GoalieUITests/Pods-Rent A GoalieUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7A716643D0830747B3EA3D37 /* Pods-Rent A GoalieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A GoalieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A GoalieTests/Pods-Rent A GoalieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8860324E70C99CAF45EE697D /* Pods_Rent_A_Goalie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rent_A_Goalie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41AB0B38B9C9461761F77BA /* Pods-Rent A GoalieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A GoalieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A GoalieUITests/Pods-Rent A GoalieUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B45DD230AAD685BBE080719F /* Pods-Rent A Goalie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A Goalie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A Goalie/Pods-Rent A Goalie.release.xcconfig"; sourceTree = "<group>"; };
+		EC16F23D6E57F7C01E48A399 /* Pods-Rent A GoalieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A GoalieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A GoalieTests/Pods-Rent A GoalieTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68CAD3195E22EBE5CC50628 /* Pods_Rent_A_Goalie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0F968976AE14539839B622 /* Pods_Rent_A_GoalieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B472C0248A802458A136AD64 /* Pods_Rent_A_GoalieUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				46061D091FADC65D00ED512A /* Rent A GoalieTests */,
 				46061D141FADC65D00ED512A /* Rent A GoalieUITests */,
 				46061CF01FADC65C00ED512A /* Products */,
+				857ED6910FEC285DAACD7C56 /* Pods */,
+				B3033FE07951CA15970E2726 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,29 @@
 			path = "Rent A GoalieUITests";
 			sourceTree = "<group>";
 		};
+		857ED6910FEC285DAACD7C56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B8791BDE05FF7EF60CD5C6E /* Pods-Rent A Goalie.debug.xcconfig */,
+				B45DD230AAD685BBE080719F /* Pods-Rent A Goalie.release.xcconfig */,
+				7A716643D0830747B3EA3D37 /* Pods-Rent A GoalieTests.debug.xcconfig */,
+				EC16F23D6E57F7C01E48A399 /* Pods-Rent A GoalieTests.release.xcconfig */,
+				B41AB0B38B9C9461761F77BA /* Pods-Rent A GoalieUITests.debug.xcconfig */,
+				62EB7B54DB796D30311D7DAC /* Pods-Rent A GoalieUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B3033FE07951CA15970E2726 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8860324E70C99CAF45EE697D /* Pods_Rent_A_Goalie.framework */,
+				3EC51D8DD69377AF7B4A4DC9 /* Pods_Rent_A_GoalieTests.framework */,
+				22F8C92348FCEB97822556B6 /* Pods_Rent_A_GoalieUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46061D1A1FADC65D00ED512A /* Build configuration list for PBXNativeTarget "Rent A Goalie" */;
 			buildPhases = (
+				D1F7B164BA72CD503FB877BF /* [CP] Check Pods Manifest.lock */,
 				46061CEB1FADC65C00ED512A /* Sources */,
 				46061CEC1FADC65C00ED512A /* Frameworks */,
 				46061CED1FADC65C00ED512A /* Resources */,
+				163AA9E18763D2E81327A350 /* [CP] Embed Pods Frameworks */,
+				59CD21EE3CF1DF63FEC967B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46061D1D1FADC65D00ED512A /* Build configuration list for PBXNativeTarget "Rent A GoalieTests" */;
 			buildPhases = (
+				2D0C5651DC870DADED10F3F3 /* [CP] Check Pods Manifest.lock */,
 				46061D021FADC65D00ED512A /* Sources */,
 				46061D031FADC65D00ED512A /* Frameworks */,
 				46061D041FADC65D00ED512A /* Resources */,
+				623798830371BF6446EE70EF /* [CP] Embed Pods Frameworks */,
+				30E906601CE02CEB4DA74E86 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46061D201FADC65D00ED512A /* Build configuration list for PBXNativeTarget "Rent A GoalieUITests" */;
 			buildPhases = (
+				D3868C311660B65010FEFD09 /* [CP] Check Pods Manifest.lock */,
 				46061D0D1FADC65D00ED512A /* Sources */,
 				46061D0E1FADC65D00ED512A /* Frameworks */,
 				46061D0F1FADC65D00ED512A /* Resources */,
+				5E498A26C403029B02D3DCDB /* [CP] Embed Pods Frameworks */,
+				60EB3E6A8FFF3597D13C92BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,158 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		163AA9E18763D2E81327A350 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Rent A Goalie/Pods-Rent A Goalie-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rent A Goalie/Pods-Rent A Goalie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D0C5651DC870DADED10F3F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rent A GoalieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30E906601CE02CEB4DA74E86 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rent A GoalieTests/Pods-Rent A GoalieTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59CD21EE3CF1DF63FEC967B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rent A Goalie/Pods-Rent A Goalie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E498A26C403029B02D3DCDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rent A GoalieUITests/Pods-Rent A GoalieUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60EB3E6A8FFF3597D13C92BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rent A GoalieUITests/Pods-Rent A GoalieUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		623798830371BF6446EE70EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rent A GoalieTests/Pods-Rent A GoalieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1F7B164BA72CD503FB877BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rent A Goalie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3868C311660B65010FEFD09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rent A GoalieUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46061CEB1FADC65C00ED512A /* Sources */ = {
@@ -428,6 +629,7 @@
 		};
 		46061D1B1FADC65D00ED512A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B8791BDE05FF7EF60CD5C6E /* Pods-Rent A Goalie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +644,7 @@
 		};
 		46061D1C1FADC65D00ED512A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B45DD230AAD685BBE080719F /* Pods-Rent A Goalie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +659,7 @@
 		};
 		46061D1E1FADC65D00ED512A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A716643D0830747B3EA3D37 /* Pods-Rent A GoalieTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -472,6 +676,7 @@
 		};
 		46061D1F1FADC65D00ED512A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC16F23D6E57F7C01E48A399 /* Pods-Rent A GoalieTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +693,7 @@
 		};
 		46061D211FADC65D00ED512A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B41AB0B38B9C9461761F77BA /* Pods-Rent A GoalieUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +709,7 @@
 		};
 		46061D221FADC65D00ED512A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62EB7B54DB796D30311D7DAC /* Pods-Rent A GoalieUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
