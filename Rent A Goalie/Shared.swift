@@ -17,4 +17,5 @@ final class Shared {
     var goalies : [Goalie]!
     var games : [Game]!
     var locations: [String]!
+    var signedInGoalie: Goalie!
 }

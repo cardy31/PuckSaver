@@ -13,6 +13,7 @@ class ViewControllerStart: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getLocations()
+        getGames()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -23,6 +24,11 @@ class ViewControllerStart: UIViewController {
     func getLocations() {
         let url = "http://127.0.0.1:8000/goalies/location/"
         httpGET(url: url, handler: Handlers.locations)
+    }
+    
+    func getGames() {
+        let url = "http://127.0.0.1:8000/goalies/game/"
+        httpGET(url: url, handler: Handlers.games)
     }
     @IBAction func goalieView(_ sender: Any) {
         performSegue(withIdentifier: "goalieSignup", sender: self)

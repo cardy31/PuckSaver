@@ -43,7 +43,7 @@ func httpPOST(url: String, handler: Handlers, parameters: [String: Any]) {
         print("Result: \(response.result)")                         // response serialization result
         
         switch response.result {
-        case .success(let value):
+        case .success:
             switch handler {
             case .goalies:
                 print("Placeholder")
