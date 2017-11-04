@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewControllerStart: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getLocations()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -19,7 +20,13 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    func getLocations() {
+        let url = "http://127.0.0.1:8000/goalies/location/"
+        httpGET(url: url, handler: Handlers.locations)
+    }
+    @IBAction func goalieView(_ sender: Any) {
+        performSegue(withIdentifier: "goalieSignup", sender: self)
+    }
+    
 }
 

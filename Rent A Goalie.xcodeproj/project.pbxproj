@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		46061CF31FADC65D00ED512A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061CF21FADC65D00ED512A /* AppDelegate.swift */; };
-		46061CF51FADC65D00ED512A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061CF41FADC65D00ED512A /* ViewController.swift */; };
+		46061CF51FADC65D00ED512A /* ViewControllerStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061CF41FADC65D00ED512A /* ViewControllerStart.swift */; };
 		46061CF81FADC65D00ED512A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46061CF61FADC65D00ED512A /* Main.storyboard */; };
 		46061CFB1FADC65D00ED512A /* Rent_A_Goalie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46061CF91FADC65D00ED512A /* Rent_A_Goalie.xcdatamodeld */; };
 		46061CFD1FADC65D00ED512A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46061CFC1FADC65D00ED512A /* Assets.xcassets */; };
 		46061D001FADC65D00ED512A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46061CFE1FADC65D00ED512A /* LaunchScreen.storyboard */; };
 		46061D0B1FADC65D00ED512A /* Rent_A_GoalieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D0A1FADC65D00ED512A /* Rent_A_GoalieTests.swift */; };
 		46061D161FADC65D00ED512A /* Rent_A_GoalieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */; };
+		467A94901FADD116001B09B5 /* ViewControllerGoalieSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A948F1FADD116001B09B5 /* ViewControllerGoalieSignup.swift */; };
+		467A94921FADD197001B09B5 /* HTTPRequestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94911FADD197001B09B5 /* HTTPRequestMethods.swift */; };
+		467A94941FADD1E2001B09B5 /* HTTPHandlerMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94931FADD1E2001B09B5 /* HTTPHandlerMethods.swift */; };
+		467A94961FADD27E001B09B5 /* Goalie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94951FADD27E001B09B5 /* Goalie.swift */; };
+		467A94981FADDA8F001B09B5 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94971FADDA8F001B09B5 /* Shared.swift */; };
+		467A949C1FAE14B5001B09B5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A949B1FAE14B5001B09B5 /* Game.swift */; };
 		A68CAD3195E22EBE5CC50628 /* Pods_Rent_A_Goalie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8860324E70C99CAF45EE697D /* Pods_Rent_A_Goalie.framework */; };
 		AE0F968976AE14539839B622 /* Pods_Rent_A_GoalieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC51D8DD69377AF7B4A4DC9 /* Pods_Rent_A_GoalieTests.framework */; };
 		B472C0248A802458A136AD64 /* Pods_Rent_A_GoalieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F8C92348FCEB97822556B6 /* Pods_Rent_A_GoalieUITests.framework */; };
@@ -43,7 +49,7 @@
 		3EC51D8DD69377AF7B4A4DC9 /* Pods_Rent_A_GoalieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rent_A_GoalieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46061CEF1FADC65C00ED512A /* Rent A Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rent A Goalie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46061CF21FADC65D00ED512A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46061CF41FADC65D00ED512A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		46061CF41FADC65D00ED512A /* ViewControllerStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerStart.swift; sourceTree = "<group>"; };
 		46061CF71FADC65D00ED512A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46061CFA1FADC65D00ED512A /* Rent_A_Goalie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rent_A_Goalie.xcdatamodel; sourceTree = "<group>"; };
 		46061CFC1FADC65D00ED512A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +61,12 @@
 		46061D111FADC65D00ED512A /* Rent A GoalieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rent A GoalieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rent_A_GoalieUITests.swift; sourceTree = "<group>"; };
 		46061D171FADC65D00ED512A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		467A948F1FADD116001B09B5 /* ViewControllerGoalieSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerGoalieSignup.swift; sourceTree = "<group>"; };
+		467A94911FADD197001B09B5 /* HTTPRequestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestMethods.swift; sourceTree = "<group>"; };
+		467A94931FADD1E2001B09B5 /* HTTPHandlerMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandlerMethods.swift; sourceTree = "<group>"; };
+		467A94951FADD27E001B09B5 /* Goalie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goalie.swift; sourceTree = "<group>"; };
+		467A94971FADDA8F001B09B5 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		467A949B1FAE14B5001B09B5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		62EB7B54DB796D30311D7DAC /* Pods-Rent A GoalieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A GoalieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A GoalieUITests/Pods-Rent A GoalieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A716643D0830747B3EA3D37 /* Pods-Rent A GoalieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A GoalieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A GoalieTests/Pods-Rent A GoalieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8860324E70C99CAF45EE697D /* Pods_Rent_A_Goalie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rent_A_Goalie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,13 +128,19 @@
 		46061CF11FADC65C00ED512A /* Rent A Goalie */ = {
 			isa = PBXGroup;
 			children = (
+				467A94971FADDA8F001B09B5 /* Shared.swift */,
 				46061CF21FADC65D00ED512A /* AppDelegate.swift */,
-				46061CF41FADC65D00ED512A /* ViewController.swift */,
+				46061CF41FADC65D00ED512A /* ViewControllerStart.swift */,
+				467A948F1FADD116001B09B5 /* ViewControllerGoalieSignup.swift */,
 				46061CF61FADC65D00ED512A /* Main.storyboard */,
 				46061CFC1FADC65D00ED512A /* Assets.xcassets */,
 				46061CFE1FADC65D00ED512A /* LaunchScreen.storyboard */,
 				46061D011FADC65D00ED512A /* Info.plist */,
 				46061CF91FADC65D00ED512A /* Rent_A_Goalie.xcdatamodeld */,
+				467A94911FADD197001B09B5 /* HTTPRequestMethods.swift */,
+				467A94931FADD1E2001B09B5 /* HTTPHandlerMethods.swift */,
+				467A94951FADD27E001B09B5 /* Goalie.swift */,
+				467A949B1FAE14B5001B09B5 /* Game.swift */,
 			);
 			path = "Rent A Goalie";
 			sourceTree = "<group>";
@@ -463,9 +481,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46061CF51FADC65D00ED512A /* ViewController.swift in Sources */,
+				46061CF51FADC65D00ED512A /* ViewControllerStart.swift in Sources */,
+				467A949C1FAE14B5001B09B5 /* Game.swift in Sources */,
+				467A94941FADD1E2001B09B5 /* HTTPHandlerMethods.swift in Sources */,
 				46061CF31FADC65D00ED512A /* AppDelegate.swift in Sources */,
+				467A94921FADD197001B09B5 /* HTTPRequestMethods.swift in Sources */,
+				467A94901FADD116001B09B5 /* ViewControllerGoalieSignup.swift in Sources */,
 				46061CFB1FADC65D00ED512A /* Rent_A_Goalie.xcdatamodeld in Sources */,
+				467A94981FADDA8F001B09B5 /* Shared.swift in Sources */,
+				467A94961FADD27E001B09B5 /* Goalie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
