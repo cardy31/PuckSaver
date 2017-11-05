@@ -15,6 +15,7 @@
 		46061D001FADC65D00ED512A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46061CFE1FADC65D00ED512A /* LaunchScreen.storyboard */; };
 		46061D0B1FADC65D00ED512A /* Rent_A_GoalieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D0A1FADC65D00ED512A /* Rent_A_GoalieTests.swift */; };
 		46061D161FADC65D00ED512A /* Rent_A_GoalieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */; };
+		462ACD281FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462ACD271FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift */; };
 		467A94901FADD116001B09B5 /* ViewControllerGoalieSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A948F1FADD116001B09B5 /* ViewControllerGoalieSignup.swift */; };
 		467A94921FADD197001B09B5 /* HTTPRequestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94911FADD197001B09B5 /* HTTPRequestMethods.swift */; };
 		467A94941FADD1E2001B09B5 /* HTTPHandlerMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94931FADD1E2001B09B5 /* HTTPHandlerMethods.swift */; };
@@ -64,6 +65,7 @@
 		46061D111FADC65D00ED512A /* Rent A GoalieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rent A GoalieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rent_A_GoalieUITests.swift; sourceTree = "<group>"; };
 		46061D171FADC65D00ED512A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		462ACD271FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWaitingForGoalie.swift; sourceTree = "<group>"; };
 		467A948F1FADD116001B09B5 /* ViewControllerGoalieSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerGoalieSignup.swift; sourceTree = "<group>"; };
 		467A94911FADD197001B09B5 /* HTTPRequestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestMethods.swift; sourceTree = "<group>"; };
 		467A94931FADD1E2001B09B5 /* HTTPHandlerMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandlerMethods.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				467A949D1FAE3A43001B09B5 /* ViewControllerAvailableGames.swift */,
 				46E0786E1FAE63A4000BE446 /* ViewControllerMyGames.swift */,
 				46E0786C1FAE6375000BE446 /* ViewControllerPostGame.swift */,
+				462ACD271FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift */,
 				46061CF61FADC65D00ED512A /* Main.storyboard */,
 				46061CFC1FADC65D00ED512A /* Assets.xcassets */,
 				46061CFE1FADC65D00ED512A /* LaunchScreen.storyboard */,
@@ -497,6 +500,7 @@
 				46E0786D1FAE6375000BE446 /* ViewControllerPostGame.swift in Sources */,
 				467A94941FADD1E2001B09B5 /* HTTPHandlerMethods.swift in Sources */,
 				46061CF31FADC65D00ED512A /* AppDelegate.swift in Sources */,
+				462ACD281FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift in Sources */,
 				467A94921FADD197001B09B5 /* HTTPRequestMethods.swift in Sources */,
 				467A94901FADD116001B09B5 /* ViewControllerGoalieSignup.swift in Sources */,
 				46061CFB1FADC65D00ED512A /* Rent_A_Goalie.xcdatamodeld in Sources */,
@@ -669,7 +673,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZKVVMPE7L9;
 				INFOPLIST_FILE = "Rent A Goalie/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Cardy.Rent-A-Goalie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -684,7 +690,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZKVVMPE7L9;
 				INFOPLIST_FILE = "Rent A Goalie/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Cardy.Rent-A-Goalie";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewControllerAvailableGames: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let cellReuseIdentifier = "cell"
     
@@ -24,16 +24,20 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDelegate, UITab
         // Do any additional setup after loading the view.
     }
     
+     func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     // number of rows in table view
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("\n\n\nNumber of games: " + String(describing:Shared.shared.games.count))
         return Shared.shared.games.count
     }
     
     // create a cell for each table view row
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // create a new cell if needed or reuse an old one
-        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath)
         
         // set the text from the data model
         cell.textLabel?.text = Shared.shared.games?[indexPath.row].description
@@ -42,7 +46,7 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDelegate, UITab
     }
     
     // method to run when table view cell is tapped
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
     }
 

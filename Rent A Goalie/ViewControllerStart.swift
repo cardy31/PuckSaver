@@ -22,12 +22,12 @@ class ViewControllerStart: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func getLocations() {
-        let url = "http://127.0.0.1:8000/goalies/location/"
+        let url = "http://robcardy.com/location/"
         httpGET(url: url, handler: Handlers.locations)
     }
     
     func getGames() {
-        let url = "http://127.0.0.1:8000/goalies/game/"
+        let url = "http://robcardy.com/game/"
         httpGET(url: url, handler: Handlers.games)
     }
     @IBAction func goalieView(_ sender: Any) {

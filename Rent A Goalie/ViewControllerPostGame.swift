@@ -22,6 +22,7 @@ class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboard()
         cityPicker.dataSource = self
         cityPicker.delegate = self
 
@@ -56,23 +57,17 @@ class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPicker
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         let datetime = dateFormatter.string(from: dateTimePicker.date)
-        let url = "http://127.0.0.1:8000/goalies/game/"
+        let url = "http://robcardy.com/game/"
         let parameters: [String: Any] = [
             "firstName": first_name!,
             "lastName": last_name!,
             "skillLevel": skill_level,
-            "location": "http://127.0.0.1:8000/goalies/location/" + String(describing: (self.selectedValue + 8)) + "/",
+            "location": "http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/",
             "datetime": "2018-01-10T10:00:00Z",
             "numOfGoalies": String(describing: (numGoalies.selectedSegmentIndex + 1))
         ]
-        print(first_name!)
-        print(last_name!)
-        print(skill_level)
-        print("\n\n\n\n" + "http://127.0.0.1:8000/goalies/location/" + String(describing: (self.selectedValue + 7)) + "/" + "\n\n\n")
-        print(datetime)
-        print(String(describing: (self.numGoalies.selectedSegmentIndex + 1)))
-        httpPOST(url:url, handler: Handlers.none, parameters:parameters)
-
+        httpPOST(url:url, handler: Handlers.getMostRecentGame, parameters:parameters)
+        
         performSegue(withIdentifier: "goToSearchingView", sender: self)
     }
 

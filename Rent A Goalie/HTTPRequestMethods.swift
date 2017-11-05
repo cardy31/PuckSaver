@@ -27,6 +27,8 @@ func httpGET(url: String, handler: Handlers) {
                 parseGames(json: json)
             case .locations:
                 parseLocations(json: json)
+            case .checkForGoalie:
+                checkForGoalie(json: json)
             default:
                 print("Invalid option selected")
             }
@@ -43,10 +45,13 @@ func httpPOST(url: String, handler: Handlers, parameters: [String: Any]) {
         print("Result: \(response.result)")                         // response serialization result
         
         switch response.result {
-        case .success:
+        case .success(let value):
+            let json = JSON(value)
             switch handler {
             case .goalies:
                 print("Placeholder")
+            case .getMostRecentGame:
+                getMostRecentGame(json: json)
             case .none:
                 print("None")
             default:

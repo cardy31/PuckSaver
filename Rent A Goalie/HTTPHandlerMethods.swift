@@ -11,7 +11,7 @@ import SwiftyJSON
 import Foundation
 
 enum Handlers {
-    case games, goalies, locations, none
+    case games, goalies, locations, getMostRecentGame, checkForGoalie, none
 }
 
 func parseGoalies(json: JSON) {
@@ -45,6 +45,11 @@ func parseGames(json: JSON) {
     Shared.shared.games = games
 }
 
+func getMostRecentGame(json: JSON) {
+    Shared.shared.currentGame = json["id"].intValue
+    print("Current game is: " + String(describing: json["id"].intValue))
+}
+
 func parseLocations(json: JSON) {
     var locations: [String] = [String]()
     var count: Int = 0
@@ -55,6 +60,12 @@ func parseLocations(json: JSON) {
         count += 1
     }
     Shared.shared.locations = locations
+}
+
+func checkForGoalie(json: JSON) {
+    if (json["goalieOne"] != JSON.null) {
+        Shared.shared.foundGoalie = true
+    }
 }
 //
 //func parseLights(json: JSON) {

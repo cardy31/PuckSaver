@@ -8,6 +8,23 @@
 
 import UIKit
 
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
+
 class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var firstName: UITextField!
@@ -17,9 +34,11 @@ class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPi
     var pickerDataSource = Shared.shared.locations
     var selectedValue: Int = 0
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboard()
         cityPicker.dataSource = self
         cityPicker.delegate = self
         // Do any additional setup after loading the view.
@@ -47,26 +66,6 @@ class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPi
         selectedValue = row
     }
     
-    
-    @IBAction func buttonPress(_ sender: Any) {
-        let url = "http://127.0.0.1:8000/goalies/goalie/"
-        httpGET(url: url, handler: Handlers.goalies)
-    }
-    
-    @IBAction func postGoalie(_ sender: Any) {
-        var cities: [String] = []
-        cities.append("http://127.0.0.1:8000/goalies/location/4/")
-        let url = "http://127.0.0.1:8000/goalies/goalie/"
-        let parameters: [String: Any] = [
-            "firstName": "Carey",
-            "lastName": "Price",
-            "skillLevel": "1",
-            "cities": [
-                "http://127.0.0.1:8000/goalies/location/" + String(describing: (self.selectedValue - 1)) + "/"
-            ]
-        ]
-        httpPOST(url:url, handler: Handlers.none, parameters:parameters)
-    }
     func getSegment() -> Int {
         switch skillLevel.selectedSegmentIndex {
         case 0:
@@ -84,21 +83,17 @@ class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPi
         }
     }
     
-    @IBAction func getGames(_ sender: Any) {
-        let url = "http://127.0.0.1:8000/goalies/game/"
-        httpGET(url:url, handler: Handlers.games)
-    }
     @IBAction func submit(_ sender: Any) {
         let first_name = firstName.text
         let last_name = lastName.text
         let skill_level = getSegment()
-        let url = "http://127.0.0.1:8000/goalies/goalie/"
+        let url = "http://robcardy.com/goalie/"
         let parameters: [String: Any] = [
             "firstName": first_name!,
             "lastName": last_name!,
             "skillLevel": skill_level,
             "cities": [
-                "http://127.0.0.1:8000/goalies/location/" + String(describing: (self.selectedValue + 7)) + "/"
+                "http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/"
             ]
         ]
         httpPOST(url:url, handler: Handlers.none, parameters:parameters)

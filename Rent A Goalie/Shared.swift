@@ -18,4 +18,6 @@ final class Shared {
     var games : [Game]!
     var locations: [String]!
     var signedInGoalie: Goalie!
+    var currentGame: Int!
+    var foundGoalie: Bool = false
 }
