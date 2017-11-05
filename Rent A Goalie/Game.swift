@@ -28,12 +28,6 @@ class Game: CustomStringConvertible {
     }
     
     public var description: String {
-        return "Id is " + String(describing:self.id) +
-        "\nFirst name is " + self.firstName +
-        "\nLast name is " + self.lastName +
-        "\nSkill level is " + String(describing:self.skillLevel) +
-        "\nLocation is " + self.location +
-        "\nDate and time is " + self.datetime +
-        "\nGoalies needed: " + String(describing:self.goaliesNeeded) + "\n"
+        return firstName + "'s Game"
     }
 }
