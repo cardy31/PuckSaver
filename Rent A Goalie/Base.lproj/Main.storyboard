@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller Start-->
         <scene sceneID="tne-QT-ifu">
@@ -18,30 +23,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puck Saver" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVf-F0-xwE">
+                                <rect key="frame" x="16" y="65" width="343" height="52.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5b7-Ws-qoC">
-                                <rect key="frame" x="103" y="205" width="169" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="wFB-L8-c7L"/>
-                                </constraints>
+                                <rect key="frame" x="69" y="188.5" width="237" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Goalie"/>
+                                <state key="normal" title="I'm a Goalie"/>
                                 <connections>
                                     <action selector="goalieView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtr-UW-1LQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJK-xj-geK">
-                                <rect key="frame" x="112" y="372" width="151" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="CIW-Wg-ymI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Renter"/>
+                                <rect key="frame" x="69" y="354.5" width="237" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="I Need a Goalie"/>
                                 <connections>
                                     <segue destination="Plf-cF-cgu" kind="show" id="4av-dD-9hh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUH-c3-6dM">
-                                <rect key="frame" x="42" y="111" width="291" height="30"/>
+                                <rect key="frame" x="41" y="270.5" width="292" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="See Games"/>
                                 <connections>
@@ -51,16 +56,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XJK-xj-geK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="JMd-ek-Cjn"/>
-                            <constraint firstItem="mUH-c3-6dM" firstAttribute="centerX" secondItem="5b7-Ws-qoC" secondAttribute="centerX" id="WbV-wQ-qeu"/>
-                            <constraint firstItem="mUH-c3-6dM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="cXU-Ka-9se"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XJK-xj-geK" secondAttribute="bottom" constant="265" id="cx1-HA-cFj"/>
-                            <constraint firstItem="XJK-xj-geK" firstAttribute="centerX" secondItem="5b7-Ws-qoC" secondAttribute="centerX" id="fom-8H-t2b"/>
-                            <constraint firstItem="5b7-Ws-qoC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="103" id="j3y-be-ZV1"/>
-                            <constraint firstItem="5b7-Ws-qoC" firstAttribute="top" secondItem="mUH-c3-6dM" secondAttribute="bottom" constant="64" id="mob-yN-KCi"/>
-                            <constraint firstItem="5b7-Ws-qoC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="185" id="sIj-k1-wnD"/>
-                            <constraint firstItem="mUH-c3-6dM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="91" id="txc-mD-XV2"/>
-                            <constraint firstItem="XJK-xj-geK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vHZ-Cr-a41"/>
+                            <constraint firstItem="mUH-c3-6dM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="9xz-7D-Tu5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XVf-F0-xwE" secondAttribute="trailing" constant="16" id="GiK-4r-X3X"/>
+                            <constraint firstItem="XVf-F0-xwE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="H8b-q0-LPg"/>
+                            <constraint firstItem="mUH-c3-6dM" firstAttribute="top" secondItem="5b7-Ws-qoC" secondAttribute="bottom" constant="40" id="IAx-cG-0Gt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5b7-Ws-qoC" secondAttribute="trailing" constant="69" id="Ik8-u3-65J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XJK-xj-geK" secondAttribute="trailing" constant="69" id="MdN-vq-1Th"/>
+                            <constraint firstItem="XVf-F0-xwE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="RSe-P6-Ors"/>
+                            <constraint firstItem="5b7-Ws-qoC" firstAttribute="top" secondItem="XVf-F0-xwE" secondAttribute="bottom" constant="71" id="Ytn-A2-vNd"/>
+                            <constraint firstItem="XJK-xj-geK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="i2N-JP-Z0g"/>
+                            <constraint firstItem="5b7-Ws-qoC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="mYU-F8-Xwt"/>
+                            <constraint firstItem="XJK-xj-geK" firstAttribute="top" secondItem="mUH-c3-6dM" secondAttribute="bottom" constant="40" id="p1b-oB-fqa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mUH-c3-6dM" secondAttribute="trailing" constant="42" id="zIs-wP-Hna"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -252,8 +259,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhs-NQ-z95">
-                                <rect key="frame" x="112" y="180" width="151" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bhs-NQ-z95">
+                                <rect key="frame" x="111.27968526465156" y="178" width="151.00000000000011" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Refresh"/>
@@ -281,15 +288,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Found Your Goalie!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7K0-mn-uui">
-                                <rect key="frame" x="84" y="109" width="232" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found Your Goalie!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7K0-mn-uui">
+                                <rect key="frame" x="82.5" y="145" width="211" height="82"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7K0-mn-uui" firstAttribute="top" secondItem="S00-5I-vQn" secondAttribute="top" constant="125" id="Jv5-Sn-tmd"/>
+                            <constraint firstItem="S00-5I-vQn" firstAttribute="trailing" secondItem="7K0-mn-uui" secondAttribute="trailing" constant="81.5" id="Zja-l5-xlO"/>
+                            <constraint firstItem="7K0-mn-uui" firstAttribute="centerX" secondItem="vvv-ut-Nhi" secondAttribute="centerX" id="iIZ-nu-LFZ"/>
+                            <constraint firstItem="S00-5I-vQn" firstAttribute="bottom" secondItem="7K0-mn-uui" secondAttribute="bottom" constant="440" id="seT-MF-JHW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="S00-5I-vQn"/>
                     </view>
                 </viewController>
@@ -418,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYb-81-KxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="426" y="-331"/>
+            <point key="canvasLocation" x="652" y="-470"/>
         </scene>
         <!--My Games-->
         <scene sceneID="JNI-IS-Cu9">
@@ -521,6 +533,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5QJ-Yb-xxs"/>
+        <segue reference="wMx-yx-KvV"/>
     </inferredMetricsTieBreakers>
 </document>

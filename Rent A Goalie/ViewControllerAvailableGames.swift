@@ -18,7 +18,7 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-
+        self.tableView.autoresizingMask = UIViewAutoresizing.flexibleHeight;
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
@@ -47,7 +47,14 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UIT
     
     // method to run when table view cell is tapped
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        let url = "http://robcardy.com/game/" + String(describing:(indexPath.row + 2)) + "/"
+        let num = Shared.shared.signedInGoalie.id
+        httpPUT(url: url, handler: Handlers.none, parameters: [
+            "goalieOne": "http://robcardy.com/goalie/" + String(describing: num) + "/",
+            "firstName": Shared.shared.signedInGoalie.firstName,
+            "lastName": Shared.shared.signedInGoalie.lastName,
+            "location": Shared.shared.signedInGoalie.cities[0]
+            ])
     }
 
     override func didReceiveMemoryWarning() {
