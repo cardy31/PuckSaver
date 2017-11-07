@@ -27,6 +27,10 @@ class Goalie: CustomStringConvertible {
         self.pic = pic
     }
     
+    func convertForPost() -> [String: Any] {
+        return ["firstName": self.firstName, "lastName": self.lastName, "skillLevel": self.skillLevel, "cities": self.cities, "pic": self.pic]
+    }
+    
     // MARK: Methods
     public var description: String {
         return "Name is " + self.firstName + " " + self.lastName + "\nSkill Level is " + String(describing: self.skillLevel) +

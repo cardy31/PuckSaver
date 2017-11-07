@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    let api = API()
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var skillPicker: UISegmentedControl!
@@ -51,22 +52,18 @@ class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
     @IBAction func submit(_ sender: Any) {
-        let first_name = firstName.text
-        let last_name = lastName.text
-        let skill_level = getSegment()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         let datetime = dateFormatter.string(from: dateTimePicker.date)
-        let url = "http://robcardy.com/game/"
-        let parameters: [String: Any] = [
-            "firstName": first_name!,
-            "lastName": last_name!,
-            "skillLevel": skill_level,
-            "location": "http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/",
-            "datetime": "2018-01-10T10:00:00Z",
-            "numOfGoalies": String(describing: (numGoalies.selectedSegmentIndex + 1))
-        ]
-        httpPOST(url:url, handler: Handlers.getMostRecentGame, parameters:parameters)
+        let location: String = "http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/"
+        let game = Game(id: 0, firstName: firstName.text!, lastName: lastName.text!, skillLevel: getSegment(), location: location, datetime: datetime, goaliesNeeded: numGoalies.selectedSegmentIndex + 1, goalieOne: "", goalieTwo: "")
+        
+        // TODO: Handle error
+        api.postGame(game!) { responseObject, error in
+            print("Response object is:")
+            print(responseObject!)
+            print(error!)
+        }
         
         performSegue(withIdentifier: "goToSearchingView", sender: self)
     }

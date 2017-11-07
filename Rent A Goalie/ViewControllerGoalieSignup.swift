@@ -8,6 +8,7 @@
 
 import UIKit
 
+// This is for hiding the keyboard on a screen tap
 extension UIViewController
 {
     func hideKeyboard()
@@ -84,20 +85,14 @@ class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     @IBAction func submit(_ sender: Any) {
-        let first_name = firstName.text
-        let last_name = lastName.text
-        let skill_level = getSegment()
-        let url = "http://robcardy.com/goalie/"
-        let parameters: [String: Any] = [
-            "firstName": first_name!,
-            "lastName": last_name!,
-            "skillLevel": skill_level,
-            "cities": [
-                "http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/"
-            ]
-        ]
-        httpPOST(url:url, handler: Handlers.none, parameters:parameters)
-        
+        let api = API()
+        let goalie = Goalie(id: 0, firstName: firstName.text!, lastName: lastName.text!, skillLevel: getSegment(), cities: ["http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/"], pic: "")
+        // TODO: Handle error
+        api.postGoalie(goalie!) { responseObject, error in
+            print("Response Object:")
+            print(responseObject!)
+            print(error!)
+        }
         performSegue(withIdentifier: "goToGameView", sender: self)
     }
     

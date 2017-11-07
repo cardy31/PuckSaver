@@ -16,9 +16,9 @@
 		46061D0B1FADC65D00ED512A /* Rent_A_GoalieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D0A1FADC65D00ED512A /* Rent_A_GoalieTests.swift */; };
 		46061D161FADC65D00ED512A /* Rent_A_GoalieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */; };
 		462ACD281FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462ACD271FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift */; };
+		463814391FB0F0F60022E57A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463814381FB0F0F60022E57A /* API.swift */; };
 		467A94901FADD116001B09B5 /* ViewControllerGoalieSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A948F1FADD116001B09B5 /* ViewControllerGoalieSignup.swift */; };
-		467A94921FADD197001B09B5 /* HTTPRequestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94911FADD197001B09B5 /* HTTPRequestMethods.swift */; };
-		467A94941FADD1E2001B09B5 /* HTTPHandlerMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94931FADD1E2001B09B5 /* HTTPHandlerMethods.swift */; };
+		467A94941FADD1E2001B09B5 /* JSONParserCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94931FADD1E2001B09B5 /* JSONParserCustom.swift */; };
 		467A94961FADD27E001B09B5 /* Goalie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94951FADD27E001B09B5 /* Goalie.swift */; };
 		467A94981FADDA8F001B09B5 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94971FADDA8F001B09B5 /* Shared.swift */; };
 		467A949C1FAE14B5001B09B5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A949B1FAE14B5001B09B5 /* Game.swift */; };
@@ -66,9 +66,9 @@
 		46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rent_A_GoalieUITests.swift; sourceTree = "<group>"; };
 		46061D171FADC65D00ED512A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		462ACD271FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWaitingForGoalie.swift; sourceTree = "<group>"; };
+		463814381FB0F0F60022E57A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		467A948F1FADD116001B09B5 /* ViewControllerGoalieSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerGoalieSignup.swift; sourceTree = "<group>"; };
-		467A94911FADD197001B09B5 /* HTTPRequestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestMethods.swift; sourceTree = "<group>"; };
-		467A94931FADD1E2001B09B5 /* HTTPHandlerMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandlerMethods.swift; sourceTree = "<group>"; };
+		467A94931FADD1E2001B09B5 /* JSONParserCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserCustom.swift; sourceTree = "<group>"; };
 		467A94951FADD27E001B09B5 /* Goalie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goalie.swift; sourceTree = "<group>"; };
 		467A94971FADDA8F001B09B5 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		467A949B1FAE14B5001B09B5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -136,6 +136,10 @@
 		46061CF11FADC65C00ED512A /* Rent A Goalie */ = {
 			isa = PBXGroup;
 			children = (
+				463814381FB0F0F60022E57A /* API.swift */,
+				467A949B1FAE14B5001B09B5 /* Game.swift */,
+				467A94951FADD27E001B09B5 /* Goalie.swift */,
+				467A94931FADD1E2001B09B5 /* JSONParserCustom.swift */,
 				467A94971FADDA8F001B09B5 /* Shared.swift */,
 				46061CF21FADC65D00ED512A /* AppDelegate.swift */,
 				46061CF41FADC65D00ED512A /* ViewControllerStart.swift */,
@@ -149,10 +153,6 @@
 				46061CFE1FADC65D00ED512A /* LaunchScreen.storyboard */,
 				46061D011FADC65D00ED512A /* Info.plist */,
 				46061CF91FADC65D00ED512A /* Rent_A_Goalie.xcdatamodeld */,
-				467A94911FADD197001B09B5 /* HTTPRequestMethods.swift */,
-				467A94931FADD1E2001B09B5 /* HTTPHandlerMethods.swift */,
-				467A94951FADD27E001B09B5 /* Goalie.swift */,
-				467A949B1FAE14B5001B09B5 /* Game.swift */,
 			);
 			path = "Rent A Goalie";
 			sourceTree = "<group>";
@@ -498,10 +498,10 @@
 				467A949C1FAE14B5001B09B5 /* Game.swift in Sources */,
 				467A949E1FAE3A43001B09B5 /* ViewControllerAvailableGames.swift in Sources */,
 				46E0786D1FAE6375000BE446 /* ViewControllerPostGame.swift in Sources */,
-				467A94941FADD1E2001B09B5 /* HTTPHandlerMethods.swift in Sources */,
+				467A94941FADD1E2001B09B5 /* JSONParserCustom.swift in Sources */,
+				463814391FB0F0F60022E57A /* API.swift in Sources */,
 				46061CF31FADC65D00ED512A /* AppDelegate.swift in Sources */,
 				462ACD281FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift in Sources */,
-				467A94921FADD197001B09B5 /* HTTPRequestMethods.swift in Sources */,
 				467A94901FADD116001B09B5 /* ViewControllerGoalieSignup.swift in Sources */,
 				46061CFB1FADC65D00ED512A /* Rent_A_Goalie.xcdatamodeld in Sources */,
 				467A94981FADDA8F001B09B5 /* Shared.swift in Sources */,

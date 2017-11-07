@@ -16,8 +16,10 @@ class Game: CustomStringConvertible {
     var location: String
     var datetime: String
     var goaliesNeeded: Int
+    var goalieOne: String
+    var goalieTwo: String
     
-    init?(id: Int, firstName: String, lastName: String, skillLevel: Int, location: String, datetime: String, goaliesNeeded: Int) {
+    init?(id: Int, firstName: String, lastName: String, skillLevel: Int, location: String, datetime: String, goaliesNeeded: Int, goalieOne: String, goalieTwo: String) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
@@ -25,6 +27,12 @@ class Game: CustomStringConvertible {
         self.location = location
         self.datetime = datetime
         self.goaliesNeeded = goaliesNeeded
+        self.goalieOne = goalieOne
+        self.goalieTwo = goalieTwo
+    }
+    
+    func convertForPost() -> [String: Any] {
+        return ["firstName": firstName, "lastName": lastName, "skillLevel": skillLevel, "location": location, "datetime": datetime, "goaliesNeeded": goaliesNeeded, "goalieOne": goalieOne, "goalieTwo": goalieTwo]
     }
     
     public var description: String {

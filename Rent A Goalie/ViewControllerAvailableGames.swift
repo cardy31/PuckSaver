@@ -11,17 +11,26 @@ import UIKit
 class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let cellReuseIdentifier = "cell"
+    var games: [Game] = []
+    
+    let api = API()
+    let parser = JSONParserCustom()
     
     @IBOutlet weak var tableView: UITableView!
     var tableDataSource = Shared.shared.games
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Table view stuff
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         self.tableView.autoresizingMask = UIViewAutoresizing.flexibleHeight;
         tableView.dataSource = self
         tableView.delegate = self
-        // Do any additional setup after loading the view.
+        
+        // Get the data we need
+        api.getGames() { responseObject, error in
+            self.games = self.parser.parseGames(json: responseObject!)
+        }
     }
     
      func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,8 +39,8 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UIT
     
     // number of rows in table view
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("\n\n\nNumber of games: " + String(describing:Shared.shared.games.count))
-        return Shared.shared.games.count
+        print("\n\n\nNumber of games: " + String(describing:games.count))
+        return games.count
     }
     
     // create a cell for each table view row
@@ -40,7 +49,7 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath)
         
         // set the text from the data model
-        cell.textLabel?.text = Shared.shared.games?[indexPath.row].description
+        cell.textLabel?.text = games[indexPath.row].description
         
         return cell
     }
@@ -49,12 +58,13 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UIT
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let url = "http://robcardy.com/game/" + String(describing:(indexPath.row + 2)) + "/"
         let num = Shared.shared.signedInGoalie.id
-        httpPUT(url: url, handler: Handlers.none, parameters: [
-            "goalieOne": "http://robcardy.com/goalie/" + String(describing: num) + "/",
-            "firstName": Shared.shared.signedInGoalie.firstName,
-            "lastName": Shared.shared.signedInGoalie.lastName,
-            "location": Shared.shared.signedInGoalie.cities[0]
-            ])
+        // TODO: This should be a patch operation
+//        api.httpPUT(url: url, handler: Handlers.none, parameters: [
+//            "goalieOne": "http://robcardy.com/goalie/" + String(describing: num) + "/",
+//            "firstName": Shared.shared.signedInGoalie.firstName,
+//            "lastName": Shared.shared.signedInGoalie.lastName,
+//            "location": Shared.shared.signedInGoalie.cities[0]
+//            ])
     }
 
     override func didReceiveMemoryWarning() {
