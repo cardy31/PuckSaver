@@ -12,20 +12,25 @@ import Foundation
 
 class JSONParserCustom {
     
-    func parseGames(json: JSON) -> [Game]{
+    // TODO: Write singular functions (game, goalie, location)
+    func parseGames(json: JSON) -> [Game] {
         var games = [Game]()
         var count = 0
         while json[count] != JSON.null {
-            let game = Game(id: json[count]["id"].intValue, firstName: json[count]["firstName"].stringValue, lastName: json[count]["lastName"].stringValue, skillLevel: json[count]["skillLevel"].intValue, location: json[count]["location"].stringValue, datetime: json[count]["datetime"].stringValue, goaliesNeeded: json[count]["numOfGoalies"].intValue, goalieOne: json[count]["goalieOne"].stringValue, goalieTwo: json[count]["goalieTwo"].stringValue)
-            games.append(game!)
-            print(game!)
+            let game = parseGame(json: json[count])
+            games.append(game)
+            print(game)
             count += 1
-            
         }
         return games
     }
     
-    func parseGoalies(json: JSON) -> [Goalie]{
+    func parseGame(json: JSON) -> Game {
+        let game = Game(id: json["id"].intValue, firstName: json["firstName"].stringValue, lastName: json["lastName"].stringValue, skillLevel: json["skillLevel"].intValue, location: json["location"].stringValue, datetime: json["datetime"].stringValue, goaliesNeeded: json["numOfGoalies"].intValue, goalieOne: json["goalieOne"].stringValue, goalieTwo: json["goalieTwo"].stringValue)
+        return game!
+    }
+    
+    func parseGoalies(json: JSON) -> [Goalie] {
         var goalies = [Goalie]()
         var count: Int = 0
         while json[count] != JSON.null {
@@ -52,5 +57,9 @@ class JSONParserCustom {
             count += 1
         }
         return locations
+    }
+    
+    func parseUser(json: JSON) -> User {
+        return User(id: json["id"].intValue, username: json["username"].stringValue, password: "", email: json["email"].stringValue, firstname: json["first_name"].stringValue, lastname: json["last_name"].stringValue, is_goalie: json["is_goalie"].boolValue)!
     }
 }

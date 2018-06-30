@@ -10,12 +10,13 @@ import UIKit
 
 class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     let api = API()
+    let parser = JSONParserCustom()
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var skillPicker: UISegmentedControl!
     @IBOutlet weak var goalieNumPIcker: UISegmentedControl!
     @IBOutlet weak var cityPicker: UIPickerView!
-    var pickerDataSource = Shared.shared.locations
+    var pickerDataSource: [String] = []
     var selectedValue: Int = 0
     @IBOutlet weak var dateTimePicker: UIDatePicker!
     @IBOutlet weak var numGoalies: UISegmentedControl!
@@ -26,7 +27,9 @@ class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPicker
         self.hideKeyboard()
         cityPicker.dataSource = self
         cityPicker.delegate = self
-
+        api.getLocations() { responseObject, error in
+            self.pickerDataSource = self.parser.parseLocations(json: responseObject!)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -35,11 +38,11 @@ class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerDataSource!.count
+        return pickerDataSource.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerDataSource?[row]
+        return pickerDataSource[row]
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -58,11 +61,14 @@ class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPicker
         let location: String = "http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/"
         let game = Game(id: 0, firstName: firstName.text!, lastName: lastName.text!, skillLevel: getSegment(), location: location, datetime: datetime, goaliesNeeded: numGoalies.selectedSegmentIndex + 1, goalieOne: "", goalieTwo: "")
         
-        // TODO: Handle error
         api.postGame(game!) { responseObject, error in
-            print("Response object is:")
-            print(responseObject!)
-            print(error!)
+            if (error == nil) {
+                let returnedGame = self.parser.parseGame(json: responseObject!)
+                // TODO: Send ID variable to next view controller in a good way
+            }
+            else {
+                print("Error was returned as non- nil. Error: " + String(describing: error!))
+            }
         }
         
         performSegue(withIdentifier: "goToSearchingView", sender: self)

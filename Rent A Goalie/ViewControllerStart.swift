@@ -10,6 +10,8 @@ import UIKit
 
 class ViewControllerStart: UIViewController {
     let api = API()
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +22,11 @@ class ViewControllerStart: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func goalieView(_ sender: Any) {
-        performSegue(withIdentifier: "goalieSignup", sender: self)
+    
+    @IBAction func submit(_ sender: Any) {
+        
     }
+    
     
 }
 

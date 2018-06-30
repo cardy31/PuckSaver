@@ -27,22 +27,31 @@ extension UIViewController
 }
 
 class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    let api = API()
+    let parser = JSONParserCustom()
 
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var skillLevel: UISegmentedControl!
     @IBOutlet weak var cityPicker: UIPickerView!
-    var pickerDataSource = Shared.shared.locations
+    var pickerDataSource: [String] = []
     var selectedValue: Int = 0
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
         cityPicker.dataSource = self
         cityPicker.delegate = self
-        // Do any additional setup after loading the view.
+        api.getLocations() { responseObject, error in
+            if error == nil {
+                self.pickerDataSource = self.parser.parseLocations(json: responseObject!)
+                self.cityPicker.reloadAllComponents()
+            }
+            else {
+                print("Error was returned as non- nil. Error: " + String(describing: error!))
+            }
+        }
     }
 
     
@@ -56,11 +65,11 @@ class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerDataSource!.count
+        return pickerDataSource.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerDataSource?[row]
+        return pickerDataSource[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

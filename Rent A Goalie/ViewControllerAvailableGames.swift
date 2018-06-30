@@ -56,15 +56,9 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UIT
     
     // method to run when table view cell is tapped
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let url = "http://robcardy.com/game/" + String(describing:(indexPath.row + 2)) + "/"
-        let num = Shared.shared.signedInGoalie.id
-        // TODO: This should be a patch operation
-//        api.httpPUT(url: url, handler: Handlers.none, parameters: [
-//            "goalieOne": "http://robcardy.com/goalie/" + String(describing: num) + "/",
-//            "firstName": Shared.shared.signedInGoalie.firstName,
-//            "lastName": Shared.shared.signedInGoalie.lastName,
-//            "location": Shared.shared.signedInGoalie.cities[0]
-//            ])
+        api.patchGame(indexPath.row + 2, "goalieOne", "http://robcardy.com/goalie/" + String(describing: Shared.shared.signedInGoalie.id) + "/") { responseObject, error in
+            print(responseObject!)
+        }
     }
 
     override func didReceiveMemoryWarning() {

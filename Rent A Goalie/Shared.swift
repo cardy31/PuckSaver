@@ -20,4 +20,5 @@ final class Shared {
     var signedInGoalie: Goalie! = Goalie(id: 5, firstName: "Rob", lastName: "Cardy", skillLevel: 2, cities: ["http://robcardy.com/location/9/"], pic: "")
     var currentGame: Int!
     var foundGoalie: Bool = false
+    var user: User!
 }

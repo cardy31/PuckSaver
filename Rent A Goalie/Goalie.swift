@@ -11,29 +11,27 @@ import Foundation
 class Goalie: CustomStringConvertible {
     // MARK: Properties
     var id: Int
-    var firstName: String
-    var lastName: String
     var skillLevel: Int
-    var cities: [String]
-    var pic: String
+    var locations: [String]
+    
     
     //MARK: Initialization
-    init?(id: Int, firstName: String, lastName: String, skillLevel: Int, cities: [String], pic: String) {
+    init(id: Int, skillLevel: Int, locations: [String]) {
         self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
         self.skillLevel = skillLevel
-        self.cities = cities // TODO: Convert location urls into city names with HTTP call
-        self.pic = pic
+        self.locations = locations // TODO: Convert location urls into city names with HTTP call
     }
     
-    func convertForPost() -> [String: Any] {
-        return ["firstName": self.firstName, "lastName": self.lastName, "skillLevel": self.skillLevel, "cities": self.cities, "pic": self.pic]
+    convenience init() {
+        self.init(id: 0, skillLevel: 1, locations: [])
     }
     
     // MARK: Methods
+    func toJson() -> [String: Any] {
+        return ["skillLevel": self.skillLevel, "locations": self.locations]
+    }
+    
     public var description: String {
-        return "Name is " + self.firstName + " " + self.lastName + "\nSkill Level is " + String(describing: self.skillLevel) +
-            "\nID is " + String(describing: self.id) + "\nCities are " + String(describing: self.cities) + "\n"
+        return "ID: " + String(describing: self.id)
     }
 }
