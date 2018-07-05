@@ -17,7 +17,7 @@ final class Shared {
     var goalies : [Goalie]!
     var games : [Game]!
     var locations: [String]!
-    var signedInGoalie: Goalie! = Goalie(id: 5, firstName: "Rob", lastName: "Cardy", skillLevel: 2, cities: ["http://robcardy.com/location/9/"], pic: "")
+    var signedInGoalie: Goalie! = Goalie(id: 5, skillLevel: 2, locations: [])
     var currentGame: Int!
     var foundGoalie: Bool = false
     var user: User!

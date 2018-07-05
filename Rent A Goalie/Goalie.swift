@@ -15,7 +15,7 @@ class Goalie: CustomStringConvertible {
     var locations: [String]
     
     
-    //MARK: Initialization
+    // MARK: Initialization
     init(id: Int, skillLevel: Int, locations: [String]) {
         self.id = id
         self.skillLevel = skillLevel
@@ -28,7 +28,7 @@ class Goalie: CustomStringConvertible {
     
     // MARK: Methods
     func toJson() -> [String: Any] {
-        return ["skillLevel": self.skillLevel, "locations": self.locations]
+        return ["skillLevel": self.skillLevel, "locations": []]
     }
     
     public var description: String {

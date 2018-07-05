@@ -95,9 +95,9 @@ class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPi
     
     @IBAction func submit(_ sender: Any) {
         let api = API()
-        let goalie = Goalie(id: 0, firstName: firstName.text!, lastName: lastName.text!, skillLevel: getSegment(), cities: ["http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/"], pic: "")
+        let goalie = Goalie(id: 0, skillLevel: getSegment(), locations: ["http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/"])
         // TODO: Handle error
-        api.postGoalie(goalie!) { responseObject, error in
+        api.postGoalie(goalie) { responseObject, error in
             print("Response Object:")
             print(responseObject!)
             print(error!)

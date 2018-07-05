@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class API {
     // The root directory of the API
-    let apiUrl: String = "https://robcardy.com/api/"
+    let apiUrl: String = "http://localhost:8000/"
     let apiCreationToken: String = "61475e173b7f21773f5c306dbe6e8443d00136ba"
     
     // GET Methods
@@ -108,7 +108,39 @@ class API {
     func postUserWithSuperToken(_ user: User, completionHandler: @escaping (JSON?, Error?) -> ()) {
         httpUserTokenPOST("user-create/", user.toJson(), completionHandler: completionHandler)
     }
-    
+
+    // Check user fields
+    func uniqueUsername(_ username: String, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        httpPOST("check-username/", ["username": username], completionHandler: completionHandler)
+    }
+
+    func uniqueEmail(_ email: String, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        httpPOST("check-email/", ["email": email], completionHandler: completionHandler)
+    }
+
+
+
+    func httpUsernameTokenPOST(_ urlExtension: String, _ parameters: [String: Any], completionHandler: @escaping (JSON?, Error?) -> ()) {
+        let url: String = apiUrl + urlExtension
+        let method: HTTPMethod = .post
+        let encoding: JSONEncoding = JSONEncoding.default
+        let headers: [String: String] = ["Content-Type":"application/json", "Authorization": "Token 61475e173b7f21773f5c306dbe6e8443d00136ba"]
+
+        Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { response in
+            // Print some info about the HTTP request
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            switch response.result {
+            case .success(let value):
+                completionHandler(JSON(value), nil)
+            case .failure(let error):
+                completionHandler(nil, error)
+            }
+        }
+    }
+
+
+
     func httpUserTokenPOST(_ urlExtension: String, _ parameters: [String: Any], completionHandler: @escaping (JSON?, Error?) -> ()) {
         let url: String = apiUrl + urlExtension
         let method: HTTPMethod = .post

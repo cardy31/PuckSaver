@@ -34,14 +34,14 @@ class JSONParserCustom {
         var goalies = [Goalie]()
         var count: Int = 0
         while json[count] != JSON.null {
-            var cities: [String] = []
+            var locations: [String] = []
             var count2: Int = 0
-            while json[count]["cities"][count2] != JSON.null {
-                cities.append(json[count]["cities"][count2].stringValue)
+            while json[count]["locations"][count2] != JSON.null {
+                locations.append(json[count]["locations"][count2].stringValue)
                 count2 += 1
             }
-            let goalie = Goalie(id: json[count]["id"].intValue, firstName: json[count]["firstName"].stringValue, lastName: json[count]["lastName"].stringValue, skillLevel: json[count]["skillLevel"].intValue, cities: cities, pic: json[count]["pic"].stringValue)
-            goalies.append(goalie!)
+            let goalie = Goalie(id: json[count]["id"].intValue, skillLevel: json[count]["skillLevel"].intValue, locations: locations)
+            goalies.append(goalie)
             count += 1
         }
         return goalies
@@ -60,6 +60,11 @@ class JSONParserCustom {
     }
     
     func parseUser(json: JSON) -> User {
-        return User(id: json["id"].intValue, username: json["username"].stringValue, password: "", email: json["email"].stringValue, firstname: json["first_name"].stringValue, lastname: json["last_name"].stringValue, is_goalie: json["is_goalie"].boolValue)!
+        return User(id: json["id"].intValue, username: json["username"].stringValue, password: "", email: json["email"].stringValue, first_name: json["first_name"].stringValue, last_name: json["last_name"].stringValue, is_active: json["is_active"].boolValue, profile: Profile(), goalie: Goalie(), token: "")!
     }
+
+    func parseUnique(json: JSON) -> Bool {
+        return json["unique"].boolValue
+    }
+
 }
