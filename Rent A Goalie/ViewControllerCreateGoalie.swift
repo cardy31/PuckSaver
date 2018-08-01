@@ -10,6 +10,8 @@ import UIKit
 
 class ViewControllerCreateGoalie: UIViewController {
 
+    var user: User = User()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

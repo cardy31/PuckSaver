@@ -6,32 +6,32 @@
 //  Copyright © 2017 Cardy Inc. All rights reserved.
 //
 
-import Foundation
-
-class Goalie: CustomStringConvertible {
-    // MARK: Properties
-    var id: Int
-    var skillLevel: Int
-    var locations: [String]
-    
-    
-    // MARK: Initialization
-    init(id: Int, skillLevel: Int, locations: [String]) {
-        self.id = id
-        self.skillLevel = skillLevel
-        self.locations = locations // TODO: Convert location urls into city names with HTTP call
-    }
-    
-    convenience init() {
-        self.init(id: 0, skillLevel: 1, locations: [])
-    }
-    
-    // MARK: Methods
-    func toJson() -> [String: Any] {
-        return ["skillLevel": self.skillLevel, "locations": []]
-    }
-    
-    public var description: String {
-        return "ID: " + String(describing: self.id)
-    }
-}
+//import Foundation
+//
+//class Goalie: CustomStringConvertible {
+//    // MARK: Properties
+//    var id: Int
+//    var skill_level: Int
+//    var locations: [String]
+//
+//
+//    // MARK: Initialization
+//    init(id: Int, skill_level: Int, locations: [String]) {
+//        self.id = id
+//        self.skill_level = skill_level
+//        self.locations = locations // TODO: Convert location urls into city names with HTTP call
+//    }
+//
+//    convenience init() {
+//        self.init(id: 0, skill_level: 1, locations: [])
+//    }
+//
+//    // MARK: Methods
+//    func toJson() -> [String: Any] {
+//        return ["skill_level": self.skill_level, "locations": []]
+//    }
+//
+//    public var description: String {
+//        return "ID: " + String(describing: self.id)
+//    }
+//}

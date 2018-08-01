@@ -45,7 +45,7 @@ class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPi
         cityPicker.delegate = self
         api.getLocations() { responseObject, error in
             if error == nil {
-                self.pickerDataSource = self.parser.parseLocations(json: responseObject!)
+//                self.pickerDataSource = self.parser.parseLocations(json: responseObject!)
                 self.cityPicker.reloadAllComponents()
             }
             else {
@@ -94,14 +94,14 @@ class ViewControllerGoalieSignup: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     @IBAction func submit(_ sender: Any) {
-        let api = API()
-        let goalie = Goalie(id: 0, skillLevel: getSegment(), locations: ["http://robcardy.com/location/" + String(describing: (self.selectedValue + 7)) + "/"])
-        // TODO: Handle error
-        api.postGoalie(goalie) { responseObject, error in
-            print("Response Object:")
-            print(responseObject!)
-            print(error!)
-        }
+//        let api = API()
+//        let goalie = Goalie(id: 0, skill_level: getSegment(), locations: [])
+//        // TODO: Handle error
+//        api.postGoalie(goalie) { responseObject, error in
+//            print("Response Object:")
+//            print(responseObject!)
+//            print(error!)
+//        }
         performSegue(withIdentifier: "goToGameView", sender: self)
     }
     

@@ -24,12 +24,6 @@ class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboard()
-        cityPicker.dataSource = self
-        cityPicker.delegate = self
-        api.getLocations() { responseObject, error in
-            self.pickerDataSource = self.parser.parseLocations(json: responseObject!)
-        }
         // Do any additional setup after loading the view.
     }
 
@@ -63,7 +57,7 @@ class ViewControllerPostGame: UIViewController, UIPickerViewDataSource, UIPicker
         
         api.postGame(game!) { responseObject, error in
             if (error == nil) {
-                let returnedGame = self.parser.parseGame(json: responseObject!)
+//                let returnedGame = self.parser.parseGame(json: responseObject!)
                 // TODO: Send ID variable to next view controller in a good way
             }
             else {

@@ -15,11 +15,13 @@
 		46061D001FADC65D00ED512A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46061CFE1FADC65D00ED512A /* LaunchScreen.storyboard */; };
 		46061D0B1FADC65D00ED512A /* Rent_A_GoalieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D0A1FADC65D00ED512A /* Rent_A_GoalieTests.swift */; };
 		46061D161FADC65D00ED512A /* Rent_A_GoalieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */; };
+		4625668F2110EB51002A5FC7 /* dbApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4625668E2110EB51002A5FC7 /* dbApi.swift */; };
 		462ACD281FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462ACD271FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift */; };
 		463814391FB0F0F60022E57A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463814381FB0F0F60022E57A /* API.swift */; };
 		46421B8C1FC213B700FE727F /* ViewControllerCreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46421B8B1FC213B700FE727F /* ViewControllerCreateUser.swift */; };
 		46421B8E1FC21B0100FE727F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46421B8D1FC21B0100FE727F /* User.swift */; };
 		46421B901FC3E59300FE727F /* ViewControllerCreateGoalie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46421B8F1FC3E59300FE727F /* ViewControllerCreateGoalie.swift */; };
+		464E580E210FCDFC002612E5 /* ViewControllerValidateEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E580D210FCDFC002612E5 /* ViewControllerValidateEmail.swift */; };
 		4679F8EA20E5A88200FD15F7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4679F8E920E5A88200FD15F7 /* Profile.swift */; };
 		467A94901FADD116001B09B5 /* ViewControllerGoalieSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A948F1FADD116001B09B5 /* ViewControllerGoalieSignup.swift */; };
 		467A94941FADD1E2001B09B5 /* JSONParserCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A94931FADD1E2001B09B5 /* JSONParserCustom.swift */; };
@@ -30,6 +32,7 @@
 		46E0786D1FAE6375000BE446 /* ViewControllerPostGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E0786C1FAE6375000BE446 /* ViewControllerPostGame.swift */; };
 		46E0786F1FAE63A4000BE446 /* ViewControllerMyGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E0786E1FAE63A4000BE446 /* ViewControllerMyGames.swift */; };
 		46EDFF911FBA7C0000C093D2 /* ViewControllerScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EDFF901FBA7C0000C093D2 /* ViewControllerScroll.swift */; };
+		5A0E731B329A663B7A0E60E7 /* UserCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E73C79DF370BE05BDCEBA /* UserCreate.swift */; };
 		A68CAD3195E22EBE5CC50628 /* Pods_Rent_A_Goalie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8860324E70C99CAF45EE697D /* Pods_Rent_A_Goalie.framework */; };
 		AE0F968976AE14539839B622 /* Pods_Rent_A_GoalieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC51D8DD69377AF7B4A4DC9 /* Pods_Rent_A_GoalieTests.framework */; };
 		B472C0248A802458A136AD64 /* Pods_Rent_A_GoalieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F8C92348FCEB97822556B6 /* Pods_Rent_A_GoalieUITests.framework */; };
@@ -70,11 +73,13 @@
 		46061D111FADC65D00ED512A /* Rent A GoalieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rent A GoalieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46061D151FADC65D00ED512A /* Rent_A_GoalieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rent_A_GoalieUITests.swift; sourceTree = "<group>"; };
 		46061D171FADC65D00ED512A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4625668E2110EB51002A5FC7 /* dbApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dbApi.swift; sourceTree = "<group>"; };
 		462ACD271FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWaitingForGoalie.swift; sourceTree = "<group>"; };
 		463814381FB0F0F60022E57A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		46421B8B1FC213B700FE727F /* ViewControllerCreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCreateUser.swift; sourceTree = "<group>"; };
 		46421B8D1FC21B0100FE727F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		46421B8F1FC3E59300FE727F /* ViewControllerCreateGoalie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCreateGoalie.swift; sourceTree = "<group>"; };
+		464E580D210FCDFC002612E5 /* ViewControllerValidateEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerValidateEmail.swift; sourceTree = "<group>"; };
 		4679F8E920E5A88200FD15F7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		467A948F1FADD116001B09B5 /* ViewControllerGoalieSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerGoalieSignup.swift; sourceTree = "<group>"; };
 		467A94931FADD1E2001B09B5 /* JSONParserCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserCustom.swift; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		46E0786C1FAE6375000BE446 /* ViewControllerPostGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPostGame.swift; sourceTree = "<group>"; };
 		46E0786E1FAE63A4000BE446 /* ViewControllerMyGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMyGames.swift; sourceTree = "<group>"; };
 		46EDFF901FBA7C0000C093D2 /* ViewControllerScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerScroll.swift; sourceTree = "<group>"; };
+		5A0E73C79DF370BE05BDCEBA /* UserCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreate.swift; sourceTree = "<group>"; };
 		62EB7B54DB796D30311D7DAC /* Pods-Rent A GoalieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A GoalieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A GoalieUITests/Pods-Rent A GoalieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A716643D0830747B3EA3D37 /* Pods-Rent A GoalieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rent A GoalieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rent A GoalieTests/Pods-Rent A GoalieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8860324E70C99CAF45EE697D /* Pods_Rent_A_Goalie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rent_A_Goalie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				463814381FB0F0F60022E57A /* API.swift */,
+				4625668E2110EB51002A5FC7 /* dbApi.swift */,
 				467A949B1FAE14B5001B09B5 /* Game.swift */,
 				467A94951FADD27E001B09B5 /* Goalie.swift */,
 				4679F8E920E5A88200FD15F7 /* Profile.swift */,
@@ -161,6 +168,7 @@
 				46E0786E1FAE63A4000BE446 /* ViewControllerMyGames.swift */,
 				46E0786C1FAE6375000BE446 /* ViewControllerPostGame.swift */,
 				46EDFF901FBA7C0000C093D2 /* ViewControllerScroll.swift */,
+				464E580D210FCDFC002612E5 /* ViewControllerValidateEmail.swift */,
 				46061CF41FADC65D00ED512A /* ViewControllerStart.swift */,
 				462ACD271FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift */,
 				46061CF61FADC65D00ED512A /* Main.storyboard */,
@@ -168,6 +176,7 @@
 				46061CFE1FADC65D00ED512A /* LaunchScreen.storyboard */,
 				46061D011FADC65D00ED512A /* Info.plist */,
 				46061CF91FADC65D00ED512A /* Rent_A_Goalie.xcdatamodeld */,
+				5A0E73C79DF370BE05BDCEBA /* UserCreate.swift */,
 			);
 			path = "Rent A Goalie";
 			sourceTree = "<group>";
@@ -434,11 +443,13 @@
 				46421B901FC3E59300FE727F /* ViewControllerCreateGoalie.swift in Sources */,
 				467A949E1FAE3A43001B09B5 /* ViewControllerAvailableGames.swift in Sources */,
 				46421B8E1FC21B0100FE727F /* User.swift in Sources */,
+				4625668F2110EB51002A5FC7 /* dbApi.swift in Sources */,
 				46E0786D1FAE6375000BE446 /* ViewControllerPostGame.swift in Sources */,
 				4679F8EA20E5A88200FD15F7 /* Profile.swift in Sources */,
 				467A94941FADD1E2001B09B5 /* JSONParserCustom.swift in Sources */,
 				46421B8C1FC213B700FE727F /* ViewControllerCreateUser.swift in Sources */,
 				463814391FB0F0F60022E57A /* API.swift in Sources */,
+				464E580E210FCDFC002612E5 /* ViewControllerValidateEmail.swift in Sources */,
 				46061CF31FADC65D00ED512A /* AppDelegate.swift in Sources */,
 				462ACD281FAED1D1009D25AF /* ViewControllerWaitingForGoalie.swift in Sources */,
 				467A94901FADD116001B09B5 /* ViewControllerGoalieSignup.swift in Sources */,
@@ -446,6 +457,7 @@
 				467A94981FADDA8F001B09B5 /* Shared.swift in Sources */,
 				46EDFF911FBA7C0000C093D2 /* ViewControllerScroll.swift in Sources */,
 				467A94961FADD27E001B09B5 /* Goalie.swift in Sources */,
+				5A0E731B329A663B7A0E60E7 /* UserCreate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

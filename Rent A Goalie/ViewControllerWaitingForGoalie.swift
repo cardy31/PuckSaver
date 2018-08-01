@@ -18,37 +18,37 @@ class ViewControllerWaitingForGoalie: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func refresh(_ sender: Any) {
-        checkGame()
-        if (Shared.shared.foundGoalie) {
-            performSegue(withIdentifier: "foundGoalie", sender: self)
-        }
-    }
+//    @IBAction func refresh(_ sender: Any) {
+//        checkGame()
+//        if (Shared.shared.foundGoalie) {
+//            performSegue(withIdentifier: "foundGoalie", sender: self)
+//        }
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func checkGame() {
-        // TODO: Get rid of the shared value
-        let url: String = "http://robcardy.com/game/" + String(describing: Int(Shared.shared.currentGame)) + "/"
-        print("\n\n\nURL is: " + url)
-        api.getGame(Shared.shared.currentGame) { responseObject, error in
-            let game: Game = self.parser.parseGame(json: responseObject!)
-            if game.goaliesNeeded == 1 {
-                if game.goalieOne != "null" {
-                    self.performSegue(withIdentifier: "foundGoalie", sender: self)
-                }
-            }
-            else { // 2 goalies needed
-                if game.goalieOne != "null" && game.goalieTwo != "null" {
-                    self.performSegue(withIdentifier: "foundGoalie", sender: self)
-                }
-            }
-        }
-        
-    }
+//    func checkGame() {
+//        // TODO: Get rid of the shared value
+//        let url: String = "http://robcardy.com/game/" + String(describing: Int(Shared.shared.currentGame)) + "/"
+//        print("\n\n\nURL is: " + url)
+//        api.getGame(Shared.shared.currentGame) { responseObject, error in
+//            let game: Game = self.parser.parseGame(json: responseObject!)
+//            if game.goaliesNeeded == 1 {
+//                if game.goalieOne != "null" {
+//                    self.performSegue(withIdentifier: "foundGoalie", sender: self)
+//                }
+//            }
+//            else { // 2 goalies needed
+//                if game.goalieOne != "null" && game.goalieTwo != "null" {
+//                    self.performSegue(withIdentifier: "foundGoalie", sender: self)
+//                }
+//            }
+//        }
+//        
+//    }
     
     
 

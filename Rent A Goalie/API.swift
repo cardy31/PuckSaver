@@ -12,8 +12,8 @@ import SwiftyJSON
 
 class API {
     // The root directory of the API
-    let apiUrl: String = "http://localhost:8000/"
-    let apiCreationToken: String = "61475e173b7f21773f5c306dbe6e8443d00136ba"
+    let apiUrl: String = "https://robcardy.com/api/"
+    let apiCreationToken: String = "cbba7a977b3167ad8cf1115f54ff7212106ad479"
     
     // GET Methods
     func getGoalies(completionHandler: @escaping (JSON?, Error?) -> ()) {
@@ -56,7 +56,8 @@ class API {
     private func httpGET(_ urlExtension: String, completionHandler: @escaping (JSON?, Error?) -> ()) {
         let url: String = apiUrl + urlExtension
         // TODO: Add auth header
-        Alamofire.request(url).responseJSON { response in
+        let headers: [String: String] = ["Authorization": "Token cbba7a977b3167ad8cf1115f54ff7212106ad479"]
+        Alamofire.request(url, headers: headers).responseJSON { response in
             // Print some info about the HTTP request
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
@@ -70,9 +71,9 @@ class API {
     }
     
     // POST Methods - Used to create or update an entire entry
-    func postGoalie(_ goalie: Goalie, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        httpPOST("goalie/", goalie.toJson(), completionHandler: completionHandler)
-    }
+//    func postGoalie(_ goalie: Goalie, completionHandler: @escaping (JSON?, Error?) -> ()) {
+//        httpPOST("goalie/", goalie.toJson(), completionHandler: completionHandler)
+//    }
     
     func postGame(_ game: Game, completionHandler: @escaping (JSON?, Error?) -> ()) {
         httpPOST("game/", game.convertForPost(), completionHandler: completionHandler)
@@ -82,35 +83,43 @@ class API {
         httpPOST("location/", ["name": name], completionHandler: completionHandler)
     }
     
-    func postUser(_ user: User, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        httpPOST("user-create/", user.toJson(), completionHandler: completionHandler)
-    }
+//    func postUser(_ user: User, completionHandler: @escaping (JSON?, Error?) -> ()) {
+//        httpPOST("user-create/", user.toJson(), completionHandler: completionHandler)
+//    }
     
-    private func httpPOST(_ urlExtension: String, _ parameters: [String: Any], completionHandler: @escaping (JSON?, Error?) -> ()) {
+    func httpPOST(_ urlExtension: String, _ parameters: [String: Any], completionHandler: @escaping (JSON?, Error?) -> ()) {
         let url: String = apiUrl + urlExtension
-        let method: HTTPMethod = .post
-        let encoding: JSONEncoding = JSONEncoding.default
-        let headers: [String: String] = ["Content-Type":"application/json"] // TODO: Add auth headers
+//        let method: HTTPMethod = .post
+//        let encoding: JSONEncoding = JSONEncoding.default
+        let headers: [String: String] = ["Authorization":"Token cbba7a977b3167ad8cf1115f54ff7212106ad479"]
+
+        print("Alamofire is posting...")
         
-        Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { response in
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { response in
             // Print some info about the HTTP request
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
+            print("Response: \(String(describing: response.debugDescription))") // http url response
             switch response.result {
                 case .success(let value):
+                    print("Success")
+                    print(response.response?.statusCode)
                     completionHandler(JSON(value), nil)
                 case .failure(let error):
+                    print("Failure")
+                    print(response.response?.statusCode)
                     completionHandler(nil, error)
             }
         }
     }
-    
-    func postUserWithSuperToken(_ user: User, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        httpUserTokenPOST("user-create/", user.toJson(), completionHandler: completionHandler)
+
+    func createUser(_ user: UserCreate, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        httpPostWithToken("user-create/", user.toJson(), completionHandler: completionHandler)
     }
 
     // Check user fields
     func uniqueUsername(_ username: String, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        print("API Making post request")
         httpPOST("check-username/", ["username": username], completionHandler: completionHandler)
     }
 
@@ -120,7 +129,7 @@ class API {
 
 
 
-    func httpUsernameTokenPOST(_ urlExtension: String, _ parameters: [String: Any], completionHandler: @escaping (JSON?, Error?) -> ()) {
+    func httpUsernameTokenPOST(_ urlExtension: String, _ parameters: [String: String], completionHandler: @escaping (JSON?, Error?) -> ()) {
         let url: String = apiUrl + urlExtension
         let method: HTTPMethod = .post
         let encoding: JSONEncoding = JSONEncoding.default
@@ -141,22 +150,28 @@ class API {
 
 
 
-    func httpUserTokenPOST(_ urlExtension: String, _ parameters: [String: Any], completionHandler: @escaping (JSON?, Error?) -> ()) {
+    func httpPostWithToken(_ urlExtension: String, _ parameters: [String: Any], completionHandler: @escaping (JSON?, Error?) -> ()) {
         let url: String = apiUrl + urlExtension
-        let method: HTTPMethod = .post
-        let encoding: JSONEncoding = JSONEncoding.default
-        let headers: [String: String] = ["Content-Type":"application/json", "Authorization": "Token 61475e173b7f21773f5c306dbe6e8443d00136ba"]
-        
-        print("Sending request...\n")
-        Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { response in
+//        let method: HTTPMethod = .post
+//        let encoding: JSONEncoding = JSONEncoding.default
+        let headers: [String: String] = ["Authorization":"Token cbba7a977b3167ad8cf1115f54ff7212106ad479"]
+
+        print("Alamofire is posting...")
+
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { response in
             // Print some info about the HTTP request
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
+            print("Response: \(String(describing: response.debugDescription))") // http url response
             switch response.result {
-                case .success(let value):
-                    completionHandler(JSON(value), nil)
-                case .failure(let error):
-                    completionHandler(nil, error)
+            case .success(let value):
+                print("Success")
+                print(response.response?.statusCode)
+                completionHandler(JSON(value), nil)
+            case .failure(let error):
+                print("Failure")
+                print(response.response?.statusCode)
+                completionHandler(nil, error)
             }
         }
     }

@@ -17,7 +17,7 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UIT
     let parser = JSONParserCustom()
     
     @IBOutlet weak var tableView: UITableView!
-    var tableDataSource = Shared.shared.games
+//    var tableDataSource = Shared.shared.games
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +28,9 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UIT
         tableView.delegate = self
         
         // Get the data we need
-        api.getGames() { responseObject, error in
-            self.games = self.parser.parseGames(json: responseObject!)
-        }
+//        api.getGames() { responseObject, error in
+//            self.games = self.parser.parseGames(json: responseObject!)
+//        }
     }
     
      func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,11 +55,11 @@ class ViewControllerAvailableGames: UIViewController, UITableViewDataSource, UIT
     }
     
     // method to run when table view cell is tapped
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        api.patchGame(indexPath.row + 2, "goalieOne", "http://robcardy.com/goalie/" + String(describing: Shared.shared.signedInGoalie.id) + "/") { responseObject, error in
-            print(responseObject!)
-        }
-    }
+//     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        api.patchGame(indexPath.row + 2, "goalieOne", "http://robcardy.com/goalie/" + String(describing: Shared.shared.signedInGoalie.id) + "/") { responseObject, error in
+//            print(responseObject!)
+//        }
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

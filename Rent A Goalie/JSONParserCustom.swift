@@ -11,60 +11,77 @@ import SwiftyJSON
 import Foundation
 
 class JSONParserCustom {
-    
-    // TODO: Write singular functions (game, goalie, location)
-    func parseGames(json: JSON) -> [Game] {
-        var games = [Game]()
-        var count = 0
-        while json[count] != JSON.null {
-            let game = parseGame(json: json[count])
-            games.append(game)
-            print(game)
-            count += 1
-        }
-        return games
+
+/* {
+    "id": 50,
+    "username": "robTester909",
+    "email": "rob.cardy.31@gmail.com",
+    "first_name": "Steve",
+    "last_name": "Tester",
+    "is_staff": false,
+    "is_active": false,
+    "profile": {
+        "id": 50,
+        "is_goalie": true,
+        "rating": 0,
+        "games_played": 0,
+        "reset_token": "4yb-9b4225fc9368756e07c6",
+        "picture": null
+    },
+    "goalie": {
+        "id": 50,
+        "skill_level": 5,
+        "location_ids": []
+    },
+    "token": "5e79ce01853fb8d70a4e01cf3050127c0e7f0ffa"
+} */
+    func parseUser(json: JSON, user: User, profile: Profile) -> (Bool, Int) {
+        // User
+        user.id = Int32(json["id"].intValue)
+        user.username = json["username"].stringValue
+        user.email = json["username"].stringValue
+        user.first_name = json["first_name"].stringValue
+        user.last_name = json["last_name"].stringValue
+        user.is_staff = json["is_staff"].boolValue
+        user.is_active = json["is_active"].boolValue
+
+        // Profile
+        profile.id = Int32(json["profile"]["id"].intValue)
+        profile.is_goalie = json["profile"]["is_goalie"].boolValue
+        profile.rating = json["profile"]["rating"].doubleValue
+        profile.games_played = Int32(json["profile"]["games_played"].intValue)
+        profile.reset_token = json["profile"]["reset_token"].stringValue
+        profile.picture = json["profile"]["picture"].stringValue
+        
+        // Token
+        user.token = json["token"].stringValue
+        
+        return (true, json["id"].intValue)
     }
-    
-    func parseGame(json: JSON) -> Game {
-        let game = Game(id: json["id"].intValue, firstName: json["firstName"].stringValue, lastName: json["lastName"].stringValue, skillLevel: json["skillLevel"].intValue, location: json["location"].stringValue, datetime: json["datetime"].stringValue, goaliesNeeded: json["numOfGoalies"].intValue, goalieOne: json["goalieOne"].stringValue, goalieTwo: json["goalieTwo"].stringValue)
-        return game!
+
+    func parseGoalieFromUser(json: JSON, goalie: Goalie) -> Bool {
+        // Goalie
+        goalie.id = Int32(json["goalie"]["id"].intValue)
+        goalie.skill_level = Int16(json["goalie"]["skill_level"].intValue)
+
+        return true
     }
-    
-    func parseGoalies(json: JSON) -> [Goalie] {
-        var goalies = [Goalie]()
-        var count: Int = 0
-        while json[count] != JSON.null {
-            var locations: [String] = []
-            var count2: Int = 0
-            while json[count]["locations"][count2] != JSON.null {
-                locations.append(json[count]["locations"][count2].stringValue)
-                count2 += 1
-            }
-            let goalie = Goalie(id: json[count]["id"].intValue, skillLevel: json[count]["skillLevel"].intValue, locations: locations)
-            goalies.append(goalie)
-            count += 1
-        }
-        return goalies
+
+    func userIsActive(json: JSON) -> Bool {
+        print("In function userIsActive")
+        print(json)
+        print(json["is_active"])
+        return json["is_active"].boolValue
     }
-    
-    func parseLocations(json: JSON) -> [String] {
-        var locations: [String] = [String]()
-        var count: Int = 0
-        while json[count] != JSON.null {
-            let location = json[count]["name"].stringValue
-            locations.append(location)
-            print(location)
-            count += 1
-        }
-        return locations
-    }
-    
-    func parseUser(json: JSON) -> User {
-        return User(id: json["id"].intValue, username: json["username"].stringValue, password: "", email: json["email"].stringValue, first_name: json["first_name"].stringValue, last_name: json["last_name"].stringValue, is_active: json["is_active"].boolValue, profile: Profile(), goalie: Goalie(), token: "")!
+
+    func userIsGoalie(json: JSON) -> Bool {
+        print("In function userIsGoalie")
+        print(json)
+        print(json["profile"]["is_goalie"])
+        return json["profile"]["is_goalie"].boolValue
     }
 
     func parseUnique(json: JSON) -> Bool {
-        return json["unique"].boolValue
+        return json["unique"].stringValue == "true"
     }
-
 }
