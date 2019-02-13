@@ -6,8 +6,8 @@ target 'Rent A Goalie' do
   use_frameworks!
 
   # Pods for Rent A Goalie
-  pod 'Alamofire', '~> 4.7.2'
-  pod 'SwiftyJSON', '~>4.1'
+  pod 'Alamofire', '~> 4.7.3'
+  pod 'SwiftyJSON', '~>4.2'
   
   target 'Rent A GoalieTests' do
     inherit! :search_paths

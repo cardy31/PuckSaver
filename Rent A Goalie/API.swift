@@ -103,11 +103,11 @@ class API {
             switch response.result {
                 case .success(let value):
                     print("Success")
-                    print(response.response?.statusCode)
+                    print(response.response!.statusCode)
                     completionHandler(JSON(value), nil)
                 case .failure(let error):
                     print("Failure")
-                    print(response.response?.statusCode)
+                    print(response.response!.statusCode)
                     completionHandler(nil, error)
             }
         }
@@ -166,11 +166,11 @@ class API {
             switch response.result {
             case .success(let value):
                 print("Success")
-                print(response.response?.statusCode)
+                print(response.response!.statusCode)
                 completionHandler(JSON(value), nil)
             case .failure(let error):
                 print("Failure")
-                print(response.response?.statusCode)
+                print(response.response!.statusCode)
                 completionHandler(nil, error)
             }
         }
